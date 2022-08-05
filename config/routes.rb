@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'lists/new'
+  post'lists'=>'lists#create'  #データを追加するためのルーティングを追記した
   get 'lists/index'
   get 'lists/show'
   get 'lists/edit'
