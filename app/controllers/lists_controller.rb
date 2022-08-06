@@ -21,6 +21,8 @@ class ListsController < ApplicationController
 
 
   def index
+    # listsテーブルに保存されている、全てのレコードをまとめて取得する。
+    @lists=List.all
   end
 
   def show
