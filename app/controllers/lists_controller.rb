@@ -47,7 +47,7 @@ class ListsController < ApplicationController
   #ストロングパラメータ
   #マスアサインメント脆弱性を防ぐ仕組み
   def list_params
-    params.require(:list).permit(:title,:body)
+    params.require(:list).permit(:title,:body,:image)
   end
   # params...formから送られてくるデータはparamsの中に入っています。
   # require...送られてきたデータの中からモデル名（ここではlist)を指定し、データを絞り込む。
