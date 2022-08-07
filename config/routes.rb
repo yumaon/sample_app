@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'lists/:id'=>'lists#show',as:'list'
   # 詳細画面では、どの投稿データを表示するかを判別するために、投稿データのidもURLに含める。
 
-  get 'lists/edit'
+  get 'lists/:id/edit'=>'lists#edit',as:'edit_list'
+  patch 'lists/:id'=>'lists#update',as:'update_list'
 
   get '/top'=>'homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

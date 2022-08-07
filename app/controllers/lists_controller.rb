@@ -32,7 +32,15 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list=List.find(params[:id])
   end
+
+  def update
+    list=List.find(params[:id])
+    list.update(list_params)
+    redirect_to list_path(list.id)
+  end
+
   # ↓privateは”ここから下は一このcontrollerの中でしか呼び出せません”と言う意味がある。
   # 他のアクションを巻き込まないように下に記述する。
   private
