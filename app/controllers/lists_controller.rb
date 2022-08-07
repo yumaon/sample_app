@@ -16,7 +16,8 @@ class ListsController < ApplicationController
     # 3 データをデータベースに保存するためのsaveメソッドを実行
     list.save
     # 4 トップ画面へリダイレクト
-    redirect_to'/top'
+    # 詳細画面へのリダイレクトに記述を変更
+    redirect_to list_path(list.id)
   end
 
 
@@ -26,6 +27,8 @@ class ListsController < ApplicationController
   end
 
   def show
+    # 今回はレコードを一件だけ取得するので、インスタンス変数名は単数系の@listにする。
+    @list=List.find(params[:id])
   end
 
   def edit
