@@ -17,6 +17,9 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list.id)
     else
+      # ビューは自身が呼び出されたアクション内からインスタンス変数を参照する。
+      # renderを使う際、ビューの表示に必要なインスタンス変数を用意しなくてはならない。
+      # renderの性質を利用してエラーメッセージを表示することができる。
       render :new
     end
   end
